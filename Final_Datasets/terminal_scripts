@@ -1,0 +1,129 @@
+
+Restructuring and sampling data for fresh analysis:
+-----------------
+## astrobio1K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/astrobiology/astrobio_1000/astrobio_1000_clean_new.txt --output_h5 data/Final_Datasets/astrobiology/astrobio_1000/astrobio_1000_clean_new.h5 --output_json data/Final_Datasets/astrobiology/astrobio_1000/astrobio_1000_clean_new.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/astrobiology/astrobio_1000/astrobio_1000_clean_new.h5 -input_json data/Final_Datasets/astrobiology/astrobio_1000/astrobio_1000_clean_new.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 93 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/93' >> data/Final_Datasets/astrobiology/astrobio_1000/astrobio_1000_sample_nl.txt ; done
+-----------------
+## astrobio5K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/astrobiology/astrobio_5000/astrobio_5000_clean.txt --output_h5 data/Final_Datasets/astrobiology/astrobio_5000/astrobio_5000_clean.h5 --output_json data/Final_Datasets/astrobiology/astrobio_5000/astrobio_5000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/astrobiology/astrobio_5000/astrobio_5000_clean.h5 -input_json data/Final_Datasets/astrobiology/astrobio_5000/astrobio_5000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 93 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/93' >> data/Final_Datasets/astrobiology/astrobio_5000/astrobio_5000_sample_nl.txt ; done
+-----------------
+## astrobio10K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/astrobiology/astrobio_10000/astrobio_10000_clean.txt --output_h5 data/Final_Datasets/astrobiology/astrobio_10000/astrobio_10000_clean.h5 --output_json data/Final_Datasets/astrobiology/astrobio_10000/astrobio_10000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/astrobiology/astrobio_10000/astrobio_10000_clean.h5 -input_json data/Final_Datasets/astrobiology/astrobio_10000/astrobio_10000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 93 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/93' >> data/Final_Datasets/astrobiology/astrobio_10000/astrobio_10000_sample_nl.txt ; done
+-----------------
+## astrobio20K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/astrobiology/astrobio_20000/astrobio_20000_clean.txt --output_h5 data/Final_Datasets/astrobiology/astrobio_20000/astrobio_20000_clean.h5 --output_json data/Final_Datasets/astrobiology/astrobio_20000/astrobio_20000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/astrobiology/astrobio_20000/astrobio_20000_clean.h5 -input_json data/Final_Datasets/astrobiology/astrobio_20000/astrobio_20000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 93 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/93' >> data/Final_Datasets/astrobiology/astrobio_20000/astrobio_20000_sample_nl.txt ; done
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restructuring and sampling data for fresh analysis:
+
+## blackhole1K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/blackholes/blackhole_1000/blackhole_1000_clean.txt --output_h5 data/Final_Datasets/blackholes/blackhole_1000/blackhole_1000_clean.h5 --output_json data/Final_Datasets/blackholes/blackhole_1000/blackhole_1000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/blackholes/blackhole_1000/blackhole_1000_clean.h5 -input_json data/Final_Datasets/blackholes/blackhole_1000/blackhole_1000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 82 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/82' >> data/Final_Datasets/blackholes/blackhole_1000/blackhole_1000_sample_nl.txt ; done
+-----------------
+## blackhole5K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/blackholes/blackhole_5000/blackhole_5000_clean.txt --output_h5 data/Final_Datasets/blackholes/blackhole_5000/blackhole_5000_clean.h5 --output_json data/Final_Datasets/blackholes/blackhole_5000/blackhole_5000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/blackholes/blackhole_5000/blackhole_5000_clean.h5 -input_json data/Final_Datasets/blackholes/blackhole_5000/blackhole_5000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 82 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/82' >> data/Final_Datasets/blackholes/blackhole_5000/blackhole_5000_sample_nl.txt ; done
+-----------------
+## blackhole10K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/blackholes/blackhole_10000/blackhole_10000_clean.txt --output_h5 data/Final_Datasets/blackholes/blackhole_10000/blackhole_10000_clean.h5 --output_json data/Final_Datasets/blackholes/blackhole_10000/blackhole_10000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/blackholes/blackhole_10000/blackhole_10000_clean.h5 -input_json data/Final_Datasets/blackholes/blackhole_10000/blackhole_10000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 82 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/82' >> data/Final_Datasets/blackholes/blackhole_10000/blackhole_10000_sample_nl.txt ; done
+-----------------
+## blackhole20K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/blackholes/blackhole_20000/blackhole_20000_clean.txt --output_h5 data/Final_Datasets/blackholes/blackhole_20000/blackhole_20000_clean.h5 --output_json data/Final_Datasets/blackholes/blackhole_20000/blackhole_20000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/blackholes/blackhole_20000/blackhole_20000_clean.h5 -input_json data/Final_Datasets/blackholes/blackhole_20000/blackhole_20000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 82 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/82' >> data/Final_Datasets/blackholes/blackhole_20000/blackhole_20000_sample_nl.txt ; done
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restructuring and sampling data for fresh analysis:
+
+## exoplanet1K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/exoplanets/exoplanet_1000/exoplanet_1000_clean.txt --output_h5 data/Final_Datasets/exoplanets/exoplanet_1000/exoplanet_1000_clean.h5 --output_json data/Final_Datasets/exoplanets/exoplanet_1000/exoplanet_1000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/exoplanets/exoplanet_1000/exoplanet_1000_clean.h5 -input_json data/Final_Datasets/exoplanets/exoplanet_1000/exoplanet_1000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 80 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/80' >> data/Final_Datasets/exoplanets/exoplanet_1000/exoplanet_1000_sample_nl.txt ; done
+-----------------
+## exoplanet5K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/exoplanets/exoplanet_5000/exoplanet_5000_clean.txt --output_h5 data/Final_Datasets/exoplanets/exoplanet_5000/exoplanet_5000_clean.h5 --output_json data/Final_Datasets/exoplanets/exoplanet_5000/exoplanet_5000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/exoplanets/exoplanet_5000/exoplanet_5000_clean.h5 -input_json data/Final_Datasets/exoplanets/exoplanet_5000/exoplanet_5000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 80 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/80' >> data/Final_Datasets/exoplanets/exoplanet_5000/exoplanet_5000_sample_nl.txt ; done
+-----------------
+## exoplanet10K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/exoplanets/exoplanet_10000/exoplanet_10000_clean.txt --output_h5 data/Final_Datasets/exoplanets/exoplanet_10000/exoplanet_10000_clean.h5 --output_json data/Final_Datasets/exoplanets/exoplanet_10000/exoplanet_10000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/exoplanets/exoplanet_10000/exoplanet_10000_clean.h5 -input_json data/Final_Datasets/exoplanets/exoplanet_10000/exoplanet_10000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 80 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/80' >> data/Final_Datasets/exoplanets/exoplanet_10000/exoplanet_10000_sample_nl.txt ; done
+-----------------
+## exoplanet20K
+# preprocess X
+python scripts/preprocess.py --input_txt data/Final_Datasets/exoplanets/exoplanet_20000/exoplanet_20000_clean.txt --output_h5 data/Final_Datasets/exoplanets/exoplanet_20000/exoplanet_20000_clean.h5 --output_json data/Final_Datasets/exoplanets/exoplanet_20000/exoplanet_20000_clean.json
+
+# train X
+th train.lua -input_h5 data/Final_Datasets/exoplanets/exoplanet_20000/exoplanet_20000_clean.h5 -input_json data/Final_Datasets/exoplanets/exoplanet_20000/exoplanet_20000_clean.json -gpu -1
+
+# sample X
+for ((i=1;i<=10000;i++)) ; do th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 80 -sample 1 -gpu -1 | tr -d "\r\t\n" | sed 's/./&\n/80' >> data/Final_Datasets/exoplanets/exoplanet_20000/exoplanet_20000_sample_nl.txt ; done
+
